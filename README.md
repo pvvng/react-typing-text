@@ -42,7 +42,7 @@ export default function Example() {
 
 > Props marked with `*` are **required**.
 
-| Prop (required) | Type                                    | Default | Description                                                                                                                                                            |
+| Prop            | Type                                    | Default | Description                                                                                                                                                            |
 | --------------- | --------------------------------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `text*`         | `string`                                | —       | The text string to animate with typing effect.                                                                                                                         |
 | `autoScroll`    | `boolean`                               | `true`  | Whether to automatically scroll to the end as typing progresses.                                                                                                       |
@@ -59,9 +59,9 @@ export default function Example() {
 
 ### Usage tips:
 
-- startDelay is applied each time the text prop changes, delaying the start of typing accordingly.
-- The component does not render a cursor by default; you must provide a <span> element as the cursor prop to show a cursor.
-- To avoid React hydration and HTML structure errors, the cursor element should always be an inline element like <span>, since the text is wrapped inside a <p>.
+- startDelay is applied only once when the text prop changes (initial mount or text update), and not on subsequent loops.
+- The onTypingStart and onTypingEnd callbacks are called on every typing start and end cycle, including loops.
+- Use loop and loopDelay to control repeated typing animations.
 - Set cursor={null} to completely disable the cursor display.
 
 ## TypingTextHandle
