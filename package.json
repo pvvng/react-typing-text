@@ -1,7 +1,20 @@
 {
   "name": "react-typing-text",
   "version": "0.0.0",
-  "description": "",
+  "description": "A lightweight and fully customizable typing animation component for React.",
+
+  "keywords": [
+    "react",
+    "react-component",
+    "typing",
+    "typing-animation",
+    "react-typing",
+    "text-animation",
+    "animated-text",
+    "react-text-effect",
+    "typewriter",
+    "react-typewriter"
+  ],
 
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -10,6 +23,17 @@
   "files": ["dist"],
   "author": "pvvng",
   "license": "MIT",
+
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pvvng/react-typing-text"
+  },
+
+  "bugs": { 
+    "url": "https://github.com/pvvng/react-typing-text/issues"
+  },
+
+  "homepage": "https://github.com/pvvng/react-typing-text#readme",
 
   "scripts": {
     "dev": "vite",
@@ -30,6 +54,7 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
   },
+
   "devDependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
