@@ -1,8 +1,7 @@
 {
   "name": "react-typing-text",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A lightweight and fully customizable typing animation component for React.",
-
   "keywords": [
     "react",
     "react-component",
@@ -15,6 +14,8 @@
     "typewriter",
     "react-typewriter"
   ],
+
+  "private": false,
 
   "main": "dist/index.js",
   "module": "dist/index.js",
