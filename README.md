@@ -42,20 +42,20 @@ export default function Example() {
 
 > Props marked with `*` are **required**.
 
-| Prop (Type)                                        | Default             | Description                                                                                                              |
-| -------------------------------------------------- | ------------------- | ------------------------------------------------------------------------------------------------------------------------ |
-| `text*` (string)                                   | —                   | The text string to animate with typing effect.                                                                           |
-| `autoScroll` (boolean)                             | `true`              | Whether to automatically scroll to the end as typing progresses.                                                         |
-| `startDelay` (number)                              | `0`                 | Delay in milliseconds before typing starts.                                                                              |
-| `interval` (number)                                | `60`                | Interval in milliseconds between typing each character.                                                                  |
-| `loop` (boolean)                                   | `false`             | Whether to loop the typing animation continuously.                                                                       |
-| `loopDelay` (number)                               | `1000`              | Delay in milliseconds before restarting the looped typing animation.                                                     |
-| `className` (string)                               | —                   | CSS class name applied to the container element.                                                                         |
-| `style` (`React.CSSProperties`)                    | —                   | Inline styles applied to the container element.                                                                          |
-| `cursor` (`React.ReactElement<"span"> \| null`)    | Default cursor span | Custom cursor element. Must be a `<span>` for default styles and to avoid HTML errors. Set `null` to disable the cursor. |
-| `onTypingStart` (`() => void`)                     | —                   | Callback fired once when typing starts after `startDelay`.                                                               |
-| `onType` (`(char: string, index: number) => void`) | —                   | Callback fired on each typed character with the character and its index.                                                 |
-| `onTypingEnd` (`() => void`)                       | —                   | Callback fired once when typing finishes (or after the last loop iteration).                                             |
+| Prop (required) | Type                                    | Default             | Description                                                                                                              |
+| --------------- | --------------------------------------- | ------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| `text*`         | `string`                                | —                   | The text string to animate with typing effect.                                                                           |
+| `autoScroll`    | `boolean`                               | `true`              | Whether to automatically scroll to the end as typing progresses.                                                         |
+| `startDelay`    | `number`                                | `0`                 | Delay in milliseconds before typing starts.                                                                              |
+| `interval`      | `number`                                | `60`                | Interval in milliseconds between typing each character.                                                                  |
+| `loop`          | `boolean`                               | `false`             | Whether to loop the typing animation continuously.                                                                       |
+| `loopDelay`     | `number`                                | `1000`              | Delay in milliseconds before restarting the looped typing animation.                                                     |
+| `className`     | `string`                                | —                   | CSS class name applied to the container element.                                                                         |
+| `style`         | `React.CSSProperties`                   | —                   | Inline styles applied to the container element.                                                                          |
+| `cursor`        | `React.ReactElement<"span"> \| null`    | Default cursor span | Custom cursor element. Must be a `<span>` for default styles and to avoid HTML errors. Set `null` to disable the cursor. |
+| `onTypingStart` | `() => void`                            | —                   | Callback fired once when typing starts after `startDelay`.                                                               |
+| `onType`        | `(char: string, index: number) => void` | —                   | Callback fired on each typed character with the character and its index.                                                 |
+| `onTypingEnd`   | `() => void`                            | —                   | Callback fired once when typing finishes (or after the last loop iteration).                                             |
 
 ### Usage tips:
 
