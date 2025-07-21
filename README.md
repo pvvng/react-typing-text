@@ -38,6 +38,8 @@ export default function Example() {
 }
 ```
 
+## Typing Text Options
+
 > Props marked with `*` are **required**.
 
 | Prop (Type)                                        | Default             | Description                                                                                                              |
