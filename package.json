@@ -14,55 +14,44 @@
     "typewriter",
     "react-typewriter"
   ],
-
   "private": false,
-
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "./dist/index.d.ts",
-
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "author": "pvvng",
   "license": "MIT",
-
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pvvng/react-typing-text"
+    "url": "git+https://github.com/pvvng/react-typing-text.git"
   },
-
-  "bugs": { 
+  "bugs": {
     "url": "https://github.com/pvvng/react-typing-text/issues"
   },
-
   "homepage": "https://github.com/pvvng/react-typing-text#readme",
-
   "scripts": {
     "dev": "vite",
     "build": "rm -rf dist && tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
   },
-
   "type": "module",
-
   "exports": {
     ".": {
       "import": "./dist/index.js",
       "types": "./dist/index.d.ts"
     }
   },
-
   "peerDependencies": {
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react": ">=18.0.0 <20.0.0",
+    "react-dom": ">=18.0.0 <20.0.0"
   },
-
   "devDependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-
     "@types/node": "^24.0.15",
     "@types/react": "^19.1.8",
-    
     "vite": "^6.3.5",
     "@vitejs/plugin-react": "^4.7.0",
     "vite-plugin-dts": "^4.5.4",
