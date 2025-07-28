@@ -2,11 +2,18 @@
 
 React component for typing animation with full control – pause, resume, loop, custom cursor, and more.
 
+[![npm version](https://img.shields.io/npm/v/@pvvng/react-typing-text?color=%2300b894&label=npm)](https://www.npmjs.com/package/@pvvng/react-typing-text)
+[![Storybook](https://img.shields.io/badge/storybook-online-purple?logo=storybook)](https://pvvng.github.io/react-typing-text/?path=/docs/examples-typingtextexample--docs)
+
 ## Install
 
 ```bash
 npm install @pvvng/react-typing-text
 ```
+
+## Storybook
+
+Try it live on Storybook -> [Link](https://pvvng.github.io/react-typing-text/?path=/docs/examples-typingtextexample--docs)
 
 ## Simple Example
 
@@ -64,13 +71,18 @@ export default function Example() {
 - Use loop and loopDelay to control repeated typing animations.
 - Set cursor={null} to completely disable the cursor display.
 
-## TypingTextHandle
+## TypingTextHandle Method
 
-| Method   | Description                                                  |
-| -------- | ------------------------------------------------------------ |
-| `pause`  | Pauses the typing animation.                                 |
-| `resume` | Resumes the typing animation if paused and not finished.     |
-| `reset`  | Resets the typing animation to the start and resumes typing. |
+Accessible via `ref` using `useRef<TypingTextHandle>()`.
+
+| Method   | Description                                                           |
+| -------- | --------------------------------------------------------------------- |
+| `pause`  | Pauses the typing animation.                                          |
+| `resume` | Resumes the typing animation if paused and not finished.              |
+| `reset`  | Resets the typing animation to the start and resumes typing.          |
+| `skip()` | **Skips** the current typing and immediately renders the full `text`. |
+
+> Use `skip()` to let users instantly reveal all text without waiting for the animation.
 
 ### Usage tips:
 
