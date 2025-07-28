@@ -73,42 +73,29 @@ export const WithCustomStyle: Story = {
   },
 };
 
-export const WithRefControl: Story = {
-  args: {
-    text: "You can control the typing with buttons!",
-  },
-  render: () => {
-    const ref = useRef<TypingTextHandle>(null);
+export const WithRefControl = function MyComponent() {
+  const ref = useRef<TypingTextHandle>(null);
 
-    return (
-      <div>
-        <TypingText
-          ref={ref}
-          text="You can control the typing with buttons!"
-          interval={100}
-          autoScroll={false}
-          onType={(char, index) => {
-            action("onType")(`${char} (${index})`);
-          }}
-          style={{ fontSize: 18, fontWeight: 600 }}
-          onTypingStart={action("onTypingStart")}
-          onTypingEnd={action("onTypingEnd")}
-        />
-        <div style={{ display: "flex", gap: "10px", marginTop: "1rem" }}>
-          <button onClick={() => ref.current?.pause()}>Pause</button>
-          <button onClick={() => ref.current?.resume()}>Resume</button>
-          <button onClick={() => ref.current?.reset()}>Reset</button>
-          <button onClick={() => ref.current?.skip()}>Skip</button>
-        </div>
+  return (
+    <div>
+      <TypingText
+        ref={ref}
+        text="You can control the typing with buttons!"
+        interval={100}
+        autoScroll={false}
+        onType={(char, index) => {
+          action("onType")(`${char} (${index})`);
+        }}
+        style={{ fontSize: 18, fontWeight: 600 }}
+        onTypingStart={action("onTypingStart")}
+        onTypingEnd={action("onTypingEnd")}
+      />
+      <div style={{ display: "flex", gap: "10px", marginTop: "1rem" }}>
+        <button onClick={() => ref.current?.pause()}>Pause</button>
+        <button onClick={() => ref.current?.resume()}>Resume</button>
+        <button onClick={() => ref.current?.reset()}>Reset</button>
+        <button onClick={() => ref.current?.skip()}>Skip</button>
       </div>
-    );
-  },
-  parameters: {
-    docs: {
-      description: {
-        story:
-          "Demonstrates how to control the TypingText animation using ref-based imperative methods.",
-      },
-    },
-  },
+    </div>
+  );
 };
