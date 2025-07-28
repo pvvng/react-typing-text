@@ -18,5 +18,5 @@ export interface TypingTextHandle {
     reset: () => void;
     skip: () => void;
 }
-declare const TypingText: import('../../node_modules/react').ForwardRefExoticComponent<TypingTextOptions & import('../../node_modules/react').RefAttributes<TypingTextHandle>>;
+declare const TypingText: import('react').ForwardRefExoticComponent<TypingTextOptions & import('react').RefAttributes<TypingTextHandle>>;
 export default TypingText;
