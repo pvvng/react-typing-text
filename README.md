@@ -3,7 +3,7 @@
 React component for typing animation with full control – pause, resume, loop, custom cursor, and more.
 
 [![npm version](https://img.shields.io/npm/v/@pvvng/react-typing-text?color=%2300b894&label=npm)](https://www.npmjs.com/package/@pvvng/react-typing-text)
-[![Storybook](https://img.shields.io/badge/storybook-online-purple?logo=storybook)](https://pvvng.github.io/react-typing-text/?path=/docs/examples-typingtextexample--docs)
+[![Storybook](https://img.shields.io/badge/storybook-online-purple?logo=storybook)](https://pvvng.github.io/react-typing-text)
 
 ## Install
 
