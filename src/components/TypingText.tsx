@@ -29,6 +29,7 @@ export interface TypingTextHandle {
   pause: () => void;
   resume: () => void;
   reset: () => void;
+  skip: () => void;
 }
 
 const TypingText = forwardRef<TypingTextHandle, TypingTextOptions>(
@@ -78,21 +79,25 @@ const TypingText = forwardRef<TypingTextHandle, TypingTextOptions>(
     }, [text]);
 
     useEffect(() => {
+      const handleTypingEnd = () => {
+        if (loop) {
+          isTypingPaused.current = true;
+          setTimeout(() => {
+            initState();
+            onTypingStart?.();
+            isTypingPaused.current = false; // 재시작
+          }, loopDelay);
+        }
+
+        isTypingPaused.current = true;
+        return onTypingEnd?.(); // end typing callback
+      };
+
       const typingInterval = setInterval(() => {
         if (isTypingPaused.current) return;
 
         if (textCount >= text.length) {
-          if (loop) {
-            isTypingPaused.current = true;
-            setTimeout(() => {
-              initState();
-              onTypingStart?.();
-              isTypingPaused.current = false; // 재시작
-            }, loopDelay);
-          }
-
-          isTypingPaused.current = true;
-          return onTypingEnd?.(); // end typing callback
+          return handleTypingEnd();
         }
 
         const nextChar = text[textCount];
@@ -123,6 +128,12 @@ const TypingText = forwardRef<TypingTextHandle, TypingTextOptions>(
         isTypingPaused.current = false; // 정지 종료
         onTypingStart?.();
       },
+      skip: () => {
+        setSequence(text);
+        setTextCount(text.length);
+        onTypingEnd?.();
+        isTypingPaused.current = true;
+      },
     }));
 
     return (
@@ -136,7 +147,14 @@ const TypingText = forwardRef<TypingTextHandle, TypingTextOptions>(
       >
         {sequence}
         {cursor !== null && cursor}
-        <span ref={endRef} style={{ display: "inline-block", height: 0 }} />
+        <span
+          ref={endRef}
+          style={{
+            display: "inline-block",
+            height: 0,
+            marginTop: 1,
+          }}
+        />
       </p>
     );
   }
