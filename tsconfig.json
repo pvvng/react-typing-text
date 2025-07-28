@@ -26,6 +26,6 @@
     "outDir": "./dist",
   },
   "include": ["src"],
-  "exclude": ["**/*.test.ts", "**/*.spec.ts", "node_modules"],
+  "exclude": ["**/*.test.ts", "**/*.spec.ts", "node_modules", "src/stories"],
   "outDir": "dist"
 }

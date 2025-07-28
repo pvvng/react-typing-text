@@ -1,56 +1,59 @@
-import { jsxs as D, jsx as I } from "react/jsx-runtime";
-import { forwardRef as H, useState as x, useRef as C, useEffect as a, useImperativeHandle as P } from "react";
-const F = H(
+import { jsxs as H, jsx as x } from "react/jsx-runtime";
+import { forwardRef as P, useState as I, useRef as d, useEffect as f, useImperativeHandle as V } from "react";
+const G = P(
   ({
-    text: s,
+    text: r,
     autoScroll: m = !0,
-    startDelay: n = 0,
-    interval: c = 60,
-    loop: b = !1,
+    startDelay: i = 0,
+    interval: a = 60,
+    loop: v = !1,
     loopDelay: R = 1e3,
     className: j,
     style: q,
-    cursor: l,
-    onTypingStart: e,
-    onType: i,
-    onTypingEnd: f
+    cursor: c,
+    onTypingStart: s,
+    onType: h,
+    onTypingEnd: u
   }, A) => {
-    const [B, d] = x(""), [t, k] = x(0), v = C(null), r = C(!0), o = () => {
-      d(""), k(0);
+    const [B, n] = I(""), [t, b] = I(0), w = d(null), e = d(!0), k = () => {
+      n(""), b(0);
     };
-    return a(() => {
-      l && l.type !== "span" && console.warn("cursor must be a <span> element.");
-    }, [l]), a(() => {
-      o(), r.current = !0;
-      const u = setTimeout(() => {
-        r.current = !1, e == null || e();
-      }, n);
-      return () => clearTimeout(u);
-    }, [s]), a(() => {
-      const u = setInterval(() => {
-        if (r.current) return;
-        if (t >= s.length)
-          return b && (r.current = !0, setTimeout(() => {
-            o(), e == null || e(), r.current = !1;
-          }, R)), r.current = !0, f == null ? void 0 : f();
-        const w = s[t];
-        i == null || i(w, t), d((h) => h + w), k((h) => h + 1);
-      }, c);
-      return () => clearInterval(u);
-    }, [s, t, b, c, f]), a(() => {
-      var u;
-      m && ((u = v.current) == null || u.scrollIntoView({ behavior: "smooth", block: "end" }));
-    }, [t]), P(A, () => ({
+    return f(() => {
+      c && c.type !== "span" && console.warn("cursor must be a <span> element.");
+    }, [c]), f(() => {
+      k(), e.current = !0;
+      const l = setTimeout(() => {
+        e.current = !1, s == null || s();
+      }, i);
+      return () => clearTimeout(l);
+    }, [r]), f(() => {
+      const l = () => (v && (e.current = !0, setTimeout(() => {
+        k(), s == null || s(), e.current = !1;
+      }, R)), e.current = !0, u == null ? void 0 : u()), D = setInterval(() => {
+        if (e.current) return;
+        if (t >= r.length)
+          return l();
+        const C = r[t];
+        h == null || h(C, t), n((o) => o + C), b((o) => o + 1);
+      }, a);
+      return () => clearInterval(D);
+    }, [r, t, v, a, u]), f(() => {
+      var l;
+      m && ((l = w.current) == null || l.scrollIntoView({ behavior: "smooth", block: "end" }));
+    }, [t]), V(A, () => ({
       pause: () => {
-        r.current = !0;
+        e.current = !0;
       },
       resume: () => {
-        t < s.length && (r.current = !1);
+        t < r.length && (e.current = !1);
       },
       reset: () => {
-        o(), r.current = !1, e == null || e();
+        k(), e.current = !1, s == null || s();
+      },
+      skip: () => {
+        n(r), b(r.length), u == null || u(), e.current = !0;
       }
-    })), /* @__PURE__ */ D(
+    })), /* @__PURE__ */ H(
       "p",
       {
         className: j,
@@ -61,31 +64,41 @@ const F = H(
         },
         children: [
           B,
-          l !== null && l,
-          /* @__PURE__ */ I("span", { ref: v, style: { display: "inline-block", height: 0 } })
+          c !== null && c,
+          /* @__PURE__ */ x(
+            "span",
+            {
+              ref: w,
+              style: {
+                display: "inline-block",
+                height: 0,
+                marginTop: 1
+              }
+            }
+          )
         ]
       }
     );
   }
-), G = ({
-  width: s = "2px",
+), J = ({
+  width: r = "2px",
   height: m = "1rem",
-  marginLeft: n = "4px",
-  cursorColor: c = "black"
-}) => /* @__PURE__ */ I(
+  marginLeft: i = "4px",
+  cursorColor: a = "black"
+}) => /* @__PURE__ */ x(
   "span",
   {
     style: {
       display: "inline-block",
       verticalAlign: "middle",
-      width: s,
+      width: r,
       height: m,
-      marginLeft: n,
-      backgroundColor: c
+      marginLeft: i,
+      backgroundColor: a
     }
   }
 );
 export {
-  G as DefaultCursor,
-  F as TypingText
+  J as DefaultCursor,
+  G as TypingText
 };
