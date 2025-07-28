@@ -97,7 +97,7 @@ const TypingText = forwardRef<TypingTextHandle, TypingTextOptions>(
         if (isTypingPaused.current) return;
 
         if (textCount >= text.length) {
-          handleTypingEnd();
+          return handleTypingEnd();
         }
 
         const nextChar = text[textCount];
@@ -129,8 +129,8 @@ const TypingText = forwardRef<TypingTextHandle, TypingTextOptions>(
         onTypingStart?.();
       },
       skip: () => {
-        initState();
         setSequence(text);
+        setTextCount(text.length);
         onTypingEnd?.();
         isTypingPaused.current = true;
       },

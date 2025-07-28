@@ -3,9 +3,11 @@ index.html
 tsconfig.json            
 tsconfig.node.json       
 vite.config.ts
+eslint.config.js
 .eslintrc.cjs
 yarn.lock
 node_modules
 .gitignore
 .storybook
+.storybook-static
 *.tgz
